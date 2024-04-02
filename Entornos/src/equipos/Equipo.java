@@ -9,6 +9,21 @@ public class Equipo {
 	        this.nombre = nombre;
 	        this.jugadores = new ArrayList<>();
 	    }
+	    public String getNombre() {
+			return nombre;
+		}
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+		public ArrayList<Jugador> getJugadores() {
+			return jugadores;
+		}
+
+		public void setJugadores(ArrayList<Jugador> jugadores) {
+			this.jugadores = jugadores;
+		}
 	    
 	    /**
 	     * Agrega un jugador al equipo.
@@ -17,7 +32,7 @@ public class Equipo {
 	    
 	    public void agregarJugador(Jugador jugador) {
 	        jugadores.add(jugador);
-	        System.out.println("Jugador agregado al equipo: " + jugador.getNombre());
+	        System.out.println("Jugador agregado al equipo: " + jugador.getNombre()+" "+jugador.getDorsal()+" "+jugador.getPosicion());
 	    }
 	    
 	    
@@ -36,4 +51,6 @@ public class Equipo {
 	        }
 	        System.out.println("No se encontró ningún jugador con ese nombre en el equipo.");
 	    }
+
+		
 }

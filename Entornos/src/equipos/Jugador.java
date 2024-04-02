@@ -19,6 +19,7 @@ public class Jugador {
 	public Jugador(String nombre, int dorsal) {
         this.nombre = nombre;
         this.dorsal = dorsal;
+        this.posicion=elegirPosicion();
     }
     
 	  public String getNombre() {
@@ -52,30 +53,29 @@ public class Jugador {
 		
 		 /**
 	     * Permite al usuario elegir la posición del jugador.
+		 * @return 
 	     */
-    public void elegirPosicion() {
+    public String elegirPosicion() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Elige la posición del jugador:");
         System.out.println("1. Delantero");
         System.out.println("2. Centrocampista");
         System.out.println("3. Portero");
-        System.out.print("Ingrese el número correspondiente a la posición: ");
+        
         
         int opcion = scanner.nextInt();
         switch (opcion) {
             case 1:
-                this.posicion = "Delantero";
-                break;
+                return "Delantero";
+              
             case 2:
-                this.posicion = "Centrocampista";
-                break;
+                return "Centrocampista";
+               
             case 3:
-                this.posicion = "Portero";
-                break;
-            default:
-                System.out.println("Opción no válida. Por favor, elige una opción válida.");
-                break;
+               return "Portero";
+               
         }
+        return "";
     }
     /**
      * Muestra informacion del jugador
