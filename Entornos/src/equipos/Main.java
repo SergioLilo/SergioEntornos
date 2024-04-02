@@ -20,17 +20,17 @@ public class Main {
 	        System.out.print("¿Cuántos equipos vas a crear? ");
 	        int numEquipos = teclado.nextInt();
 	        teclado.nextLine(); 
-	        añadirEquipos(numEquipos,equipos);
+	        anadirEquipos(numEquipos,equipos);
 	       
 	       
 	       
 	               }
 	 /**
-     * Método que permite al usuario añadir equipos.
+     * Método que permite al usuario anadir equipos.
      * @param numEquipos Número de equipos que se van a crear.
      * @param equipos Lista de equipos donde se almacenarán los equipos creados.
      */
-	public static void añadirEquipos(int numEquipos,ArrayList<Equipo> equipos){
+	public static void anadirEquipos(int numEquipos,ArrayList<Equipo> equipos){
 		  Scanner teclado = new Scanner(System.in);
 		 for (int i = 0; i < numEquipos; i++) {
 	            System.out.print("Nombre del equipo " + (i + 1) + ": ");
@@ -63,7 +63,7 @@ public class Main {
 	
 	 /**
      * Método que muestra el menú de acciones disponibles para un equipo seleccionado.
-     * @param opcEquipo Índice del equipo seleccionado en la lista de equipos.
+     * @param opcEquipo Indice del equipo seleccionado en la lista de equipos.
      * @param equipos Lista de equipos disponibles.
      */
 	public static void menuEquipo(int opcEquipo,ArrayList<Equipo> equipos) {
@@ -72,7 +72,7 @@ public class Main {
 		boolean salir=true;
 		while (salir){
 		Scanner teclado = new Scanner(System.in);
-		 System.out.println("1. Añadir jugador");
+		 System.out.println("1. Anadir jugador");
          System.out.println("2. Eliminar jugador");
          System.out.println("3. Ver informacion de los jugadores");
          System.out.println("4. Salir");
@@ -84,7 +84,7 @@ public class Main {
          }
          if(opc==1) {
         	 
-        	añadir(equipos,opcEquipo);
+        	anadir(equipos,opcEquipo);
          }
          if (opc==2) {
         	 eliminar(equipos,opcEquipo);
@@ -97,7 +97,7 @@ public class Main {
          }
 	}
 }
-	public static void añadir(ArrayList<Equipo> equipos,int opcEquipo) {
+	public static void anadir(ArrayList<Equipo> equipos,int opcEquipo) {
 		Scanner teclado = new Scanner(System.in);
 	 	 System.out.println("Introduzca en nombre");
     	 String nombre=teclado.nextLine();
