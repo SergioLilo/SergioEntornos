@@ -7,7 +7,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		/**
+		 * @since 1.0
+		 * @autor SergioLilo
+		 * @version 1.1
+		 */
+		
 		  Scanner teclado = new Scanner(System.in);
 	      ArrayList<Equipo> equipos = new ArrayList<>();
 	  
@@ -15,12 +20,16 @@ public class Main {
 	        System.out.print("¿Cuántos equipos vas a crear? ");
 	        int numEquipos = teclado.nextInt();
 	        teclado.nextLine(); 
-	        
 	        añadirEquipos(numEquipos,equipos);
 	       
 	       
 	       
 	               }
+	 /**
+     * Método que permite al usuario añadir equipos.
+     * @param numEquipos Número de equipos que se van a crear.
+     * @param equipos Lista de equipos donde se almacenarán los equipos creados.
+     */
 	public static void añadirEquipos(int numEquipos,ArrayList<Equipo> equipos){
 		  Scanner teclado = new Scanner(System.in);
 		 for (int i = 0; i < numEquipos; i++) {
@@ -32,6 +41,10 @@ public class Main {
 		 elegirEquipo(equipos);
 
 }
+	  /**
+     * Método que permite al usuario elegir un equipo.
+     * @param equipos Lista de equipos disponibles para elegir.
+     */
 	public static  void elegirEquipo(ArrayList<Equipo> equipos) {
 		 Scanner teclado = new Scanner(System.in);
 		 int opcionEquipo=999;
@@ -47,6 +60,12 @@ public class Main {
 	            menuEquipo(opcionEquipo,equipos);
 	            
 		 }
+	
+	 /**
+     * Método que muestra el menú de acciones disponibles para un equipo seleccionado.
+     * @param opcEquipo Índice del equipo seleccionado en la lista de equipos.
+     * @param equipos Lista de equipos disponibles.
+     */
 	public static void menuEquipo(int opcEquipo,ArrayList<Equipo> equipos) {
 		
 		
@@ -68,14 +87,10 @@ public class Main {
         	añadir(equipos,opcEquipo);
          }
          if (opc==2) {
-        	 System.out.println("escribe el nombre del jugador al que quieres eliminar");
-        	 String nomb=teclado.nextLine();
-        	 equipos.get(opcEquipo).eliminarJugador(nomb);
+        	 eliminar(equipos,opcEquipo);
          }
          if (opc==3) {
-        	 for (int i = 0; i < equipos.get(opcEquipo).getJugadores().size(); i++) {
-        		 equipos.get(opcEquipo).getJugadores().get(i).mostrarInfo();
-			}
+        	info(equipos,opcEquipo);
          }
          if (opc==4) {
         	 salir=false;
@@ -92,6 +107,17 @@ public class Main {
     	 equipos.get(opcEquipo).agregarJugador(new Jugador(nombre,dorsal));
     	
 		
+	}
+	public static void info(ArrayList<Equipo> equipos,int opcEquipo) {
+		 for (int i = 0; i < equipos.get(opcEquipo).getJugadores().size(); i++) {
+    		 equipos.get(opcEquipo).getJugadores().get(i).mostrarInfo();
+		}
+	}
+	public static void eliminar(ArrayList<Equipo> equipos,int opcEquipo) {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("escribe el nombre del jugador al que quieres eliminar");
+   	 String nomb=teclado.nextLine();
+   	 equipos.get(opcEquipo).eliminarJugador(nomb);
 	}
 }
 	
